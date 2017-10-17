@@ -1,3 +1,4 @@
+//requires
 var express = require('express');
 var router = express.Router();
 
@@ -10,15 +11,15 @@ router.get('/', function(req, res) {
     console.log('logged in', req.user);
     var userInfo = {
       username : req.user.username
-    };
+    };//END userInfo
     res.send(userInfo);
   } else {
     // failure best handled on the server. do redirect here.
     console.log('not logged in');
     // should probably be res.sendStatus(403) and handled client-side, esp if this is an AJAX request (which is likely with AngularJS)
     res.send(false);
-  }
-});
+  }//END else
+});//ENd router GET
 
 // clear all server session information about this user
 router.get('/logout', function(req, res) {
@@ -26,7 +27,7 @@ router.get('/logout', function(req, res) {
   console.log('Logged out');
   req.logOut();
   res.sendStatus(200);
-});
+});//END router GET
 
 
 module.exports = router;

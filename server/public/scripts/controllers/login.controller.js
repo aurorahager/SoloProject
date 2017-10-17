@@ -21,13 +21,13 @@ myApp.controller('LoginController', function($http, $location, UserService) {
           } else {
             console.log('LoginController -- login -- failure: ', response);
             vm.message = "Wrong!!";
-          }
+          }//END else
         }).catch(function(response){
           console.log('LoginController -- registerUser -- failure: ', response);
           vm.message = "Wrong!!";
-        });
-      }
-    };
+        });//END catch
+      }//END else
+    };//END login
 
     vm.registerUser = function() {
       console.log('LoginController -- registerUser');
@@ -41,7 +41,7 @@ myApp.controller('LoginController', function($http, $location, UserService) {
         }).catch(function(response) {
           console.log('LoginController -- registerUser -- error');
           vm.message = "Please try again."
-        });
-      }
-    }
-});
+        });//END catch
+      }//END else
+    }//END register user
+});//END controller

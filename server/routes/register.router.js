@@ -1,3 +1,4 @@
+//requires
 var express = require('express');
 var router = express.Router();
 var Users = require('../models/user.js');
@@ -8,7 +9,7 @@ var path = require('path');
 router.get('/', function(req, res, next) {
   console.log('get /register route');
   res.sendFile(path.resolve(__dirname, '../public/views/templates/register.html'));
-});
+});//END router GET
 
 // Handles POST request with new user data
 router.post('/', function(req, res, next) {
@@ -26,15 +27,16 @@ router.post('/', function(req, res, next) {
 
     Users.create(userToSave, function(err, post) {
       console.log('post /register -- User.create');
+      //error handling
          if(err) {
            console.log('post /register -- User.create -- failure');
            res.sendStatus(500);
          } else {
            console.log('post /register -- User.create -- success');
            res.sendStatus(201);
-         }
-    });
-});
+         }//END else
+    });//END create
+});//END router POST
 
 
 module.exports = router;

@@ -1,3 +1,4 @@
+//requires
 var session = require('express-session');
 
 module.exports = session({
@@ -6,4 +7,4 @@ module.exports = session({
    resave: 'true',
    saveUninitialized: false,
    cookie: { maxage: 60000, secure: false }
-});
+});//END export session
