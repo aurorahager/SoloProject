@@ -1,0 +1,25 @@
+<section>
+<div class="grad">
+    <header>
+        
+        <div ng-include="'/views/partials/header.html'"></div>
+        <div ng-include="'/views/partials/nav.html'"></div>
+       
+    </header>
+    </div>
+  
+    <div>
+        <h1>Search Open Places</h1>
+        <input name="searchbox" type="text" size="40" placeholder="What are you looking for?" ng-model="placeSearch">
+        <select>
+            <option value="" disabled selected>Categories</option>
+            <option value="rests">Restaurants</option>
+            <option value="deliv">Delivery</option>
+            <option value="stores">Stores</option>
+            <option value="bars">Bars & Clubs</option>
+        </select>
+        <button>Search</button>
+    <ng-map id="map" class='map_canvas' center="[44.97, -93.26]" zoom="9"></ng-map>
+    </div>
+               
+</section>

@@ -1,30 +1,38 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMap']);
 
 /// Routes ///
-myApp.config(function($routeProvider, $locationProvider) {
+myApp.config(function ($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
   console.log('myApp -- config')
   $routeProvider
     .when('/home', {
       templateUrl: '/views/templates/home.html',
+      // controller: 'HomeController as hc',
+    })//END  .when home
+    .when('/map', {
+      templateUrl: '/views/templates/map.html',
+      controller: 'MapController as mc'
+    })
+    .when('/login', {
+      templateUrl: '/views/templates/login.html',
       controller: 'LoginController as lc',
     })//END  .when home
     .when('/register', {
       templateUrl: '/views/templates/register.html',
       controller: 'LoginController as lc'
     })//END .when register
-    .when('/user', {
-      templateUrl: '/views/templates/user.html',
-      controller: 'UserController as uc',
+    .when('/events', {
+      templateUrl: '/views/templates/events.html',
+      controller: 'EventsController as ec',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();
         }//END getuser
       }//END resolve
     })//END .when user
-    .when('/info', {
-      templateUrl: '/views/templates/info.html',
-      controller: 'InfoController',
+    .when('/favs', {
+      templateUrl: '/views/templates/favorites.html',
+      controller: 'FavsController as fc',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();

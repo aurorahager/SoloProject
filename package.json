@@ -7,7 +7,7 @@
     "test": "nodemon server/server.js",
     "start": "node server/server.js"
   },
-  "author": "Scott Bromander, Kris Szafranski",
+  "author": "Rory Hager",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.4",
@@ -19,6 +19,7 @@
     "express-session": "^1.13.0",
     "jquery": "^2.1.4",
     "mongoose": "^4.4.6",
+    "ngmap": "^1.18.4",
     "passport": "^0.2.2",
     "passport-local": "^1.0.0",
     "path": "^0.11.14"
