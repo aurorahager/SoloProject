@@ -1,50 +1,51 @@
-
 myApp.controller('MapController', function (NgMap) {
-    vm = this
-    mpls = {lat:44.986656, lng: -93.258133}
+    vm = this;
+    mpls = {
+        lat: 44.986656,
+        lng: -93.258133
+    };
 
     vm.map = {};
     NgMap.getMap("map").then(function (map) {
         console.log('daMap', map);
         vm.map = map;
-    });
 
-vm.searchPlaces = function () {
-    console.log(vm.address);
 
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch({
-        location: mpls,
-        radius: 9000,
-        openNow: true,
-        type: [vm.types]
-    }, callback);
+        vm.searchPlaces = function () {
+            console.log(vm.address);
 
-    function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            // for (var i = 0; i < results.length; i++) {
-            //     createMarker(results[i]);
-            // }
-        }
-        console.log('results', results);
-        
-    }
+            var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch({
+                location: mpls,
+                radius: 9000,
+                openNow: true,
+                type: [vm.types]
+            }, callback);
 
-    // function createMarker(place) {
-    //     var placeLoc = place.geometry.location;
-    //     var marker = new google.maps.Marker({
-    //         map: vm.map,
-    //         position: place.geometry.location
-    //     });
+            function callback(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (var i = 0; i < results.length; i++) {
+                        createMarker(results[i]);
+                    }
+                }
+                console.log('results', results);
+            } //END callback
 
-    //     google.maps.event.addListener(marker, 'click', function () {
-    //         infowindow.setContent(place.name);
-    //         infowindow.open(map, this);
-    //     });
-    }
-    
-}
-    
+            function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: place.geometry.location
+                });
+
+                infowindow = new google.maps.InfoWindow();
+                google.maps.event.addListener(marker, 'click', function () {
+                    infowindow.setContent(place.name);
+                    infowindow.open(map, this);
+                });
+            } //END createMarker
+        } //END search function 
+    }); //END ngMap get map
 });
 
 
@@ -130,4 +131,3 @@ vm.searchPlaces = function () {
 //             }
 //         ]
 //     });
-

@@ -24,7 +24,7 @@
         </select>
         <button ng-click="mc.searchPlaces()">Search</button>
     <ng-map id="map" class='map_canvas' center="[44.97, -93.26]" zoom="9">
-        <!-- <marker position="[44.97, -93.26]" title="hello"></marker> -->
+    <!-- <marker ng-repeat="locs in vm.placesResults.geometry" position="{{locs.location.lat}},{{locs.location.lng}}"></marker> -->
     </ng-map>
     </div>
                
