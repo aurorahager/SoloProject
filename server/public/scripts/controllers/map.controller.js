@@ -1,9 +1,11 @@
-myApp.controller('MapController', function (NgMap) {
+myApp.controller('MapController', function (NgMap, $timeout, $mdSidenav, $scope) {
     vm = this;
     mpls = {
         lat: 44.986656,
         lng: -93.258133
     };
+
+    $scope.currentNavItem = 'places';
 
     vm.map = {};
     NgMap.getMap("map").then(function (map) {
@@ -12,7 +14,6 @@ myApp.controller('MapController', function (NgMap) {
 
 
         vm.searchPlaces = function () {
-            console.log(vm.address);
 
             var service = new google.maps.places.PlacesService(map);
             service.nearbySearch({
@@ -46,7 +47,7 @@ myApp.controller('MapController', function (NgMap) {
             } //END createMarker
         } //END search function 
     }); //END ngMap get map
-});
+});//END controller
 
 
 

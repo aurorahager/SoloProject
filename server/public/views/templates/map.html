@@ -8,24 +8,24 @@
     </header>
     </div>
   
-    <div>
-        <h1>Search Open Places</h1>
-        <input places-auto-complete name="searchbox" type="text" size="40" placeholder="What are you looking for?" ng-model="mc.address" component-restrictions="{country:'us'}"
-    types="{{types}}">
-        <select ng-model="mc.types">
-            <option value="" disabled selected>Categories</option>
-            <option value="restaurant">Restaurants</option>
-            <option value="delivery">Delivery</option>
-            <option value="store">Stores</option>
-            <option value="bar">Bars</option>
-            <option value="night_club">Clubs</option>
-            <option value="all">All</option>
-
-        </select>
-        <button ng-click="mc.searchPlaces()">Search</button>
+    <div class="main">
+        <md-input-container class="search">
+            <label>Please Select a Category</label>
+        <md-select ng-model="mc.types">
+            <md-optgroup label="Categories">
+            <!-- <option value="" disabled selected>Categories</option> -->
+            <md-option value="restaurant">Restaurants</md-option>
+            <md-option value="delivery">Delivery</md-option>
+            <md-option value="store">Stores</md-option>
+            <md-option value="bar">Bars</md-option>
+            <md-option value="night_club">Clubs</md-option>
+            <md-option value="all">All</md-option>
+            </md-optgroup>
+            </md-select>
+            </md-input-container>
+        <md-button class="search" ng-click="mc.searchPlaces()">Search</md-button>
     <ng-map id="map" class='map_canvas' center="[44.97, -93.26]" zoom="9">
     <!-- <marker ng-repeat="locs in vm.placesResults.geometry" position="{{locs.location.lat}},{{locs.location.lng}}"></marker> -->
     </ng-map>
     </div>
-               
 </section>

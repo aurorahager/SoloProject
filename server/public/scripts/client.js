@@ -1,7 +1,8 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMap']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMap', 'ngMaterial', 'ngMessages'])
+
 
 /// Routes ///
-myApp.config(function ($routeProvider, $locationProvider) {
+myApp.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
   $locationProvider.hashPrefix('');
   console.log('myApp -- config')
   $routeProvider
@@ -42,4 +43,6 @@ myApp.config(function ($routeProvider, $locationProvider) {
     .otherwise({
       redirectTo: 'home'
     });//ENd otherwise
+
+  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('pink').dark();;
 });//END config
