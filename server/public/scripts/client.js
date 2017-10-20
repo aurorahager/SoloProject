@@ -44,5 +44,5 @@ myApp.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
       redirectTo: 'home'
     });//ENd otherwise
 
-  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('pink').dark();;
+  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('purple').dark();;
 });//END config

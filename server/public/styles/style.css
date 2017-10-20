@@ -3,8 +3,18 @@
   }
 
   body {
-    background-color: rgb(43, 43, 44);
+    background-color: black;
   }
+
+._md-nav-bar-list, .md-padding {
+  background: black;
+
+
+}
+
+.md-padding {
+  padding: 2px;
+}
   .grad{
 background: linear-gradient(rgb(4, 4, 82), rgb(110, 23, 110), rgb(240, 112, 112), rgb(240, 201, 134), rgb(246, 225, 132));
 
@@ -19,11 +29,11 @@ header {
   color: white;
 }
  .title {
-   opacity: .60;
+   opacity: .90;
    text-align: center;
    font-size: 100px;
-   padding-top: 100px;
-   margin-bottom: 40px;
+   padding-top: 0px;
+   margin-bottom: 120px;
    text-shadow: 2px 2px #2b0be2;
    font-family: 'Fascinate Inline',
    cursive;
@@ -33,24 +43,58 @@ header {
    font-size: 40px;
    text-align: center;
    color: white;
-   opacity: .70;
  }
 
 .search {
-  margin-top: 70px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
   color: white;
 }
 
 .homeHeader {
   font-size: 200px;
+   font-family: 'Fascinate Inline',
+   cursive;
+
 }
 
-.openingPage {
-padding: 100px;
+.black {
+  color: black;
+}
+
+.homeBody {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  height: 100%;
+  width:100%;
+}
+.openingPageLeft {
+  height: 100%;
+  width:50%;
+  float: left;
+  color: black;
+  background-color: white;
+  
+}
+
+.openingPageRight {
   background-image: url('/imgs/owl.jpg');
-   background-repeat: no-repeat;
-   background-position: right;
-  /* background-size: 500px 800px; */
-  background-color: black;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100%;
+  height: 100%;
+  width:50%;
+  float: right;
+}
+
+.owl {
+  position: absolute;
+  bottom: 0;
+  left: 5;
+  padding-left: 100px;
+}
+
+.homeButton {
+  color: purple;
 }
