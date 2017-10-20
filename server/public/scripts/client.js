@@ -24,15 +24,15 @@ myApp.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
     })//END .when register
     .when('/events', {
       templateUrl: '/views/templates/events.html',
-      controller: 'EventsController as ec',
-      resolve: {
-        getuser : function(UserService){
-          return UserService.getuser();
-        }//END getuser
-      }//END resolve
+      controller: 'EventsController as ec'
+      // resolve: {
+      //   getuser : function(UserService){
+      //     return UserService.getuser();
+      //   }//END getuser
+      // }//END resolve
     })//END .when user
     .when('/favs', {
-      templateUrl: '/views/templates/favorites.html',
+      templateUrl: '/views/templates/favs.html',
       controller: 'FavsController as fc',
       resolve: {
         getuser : function(UserService){

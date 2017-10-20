@@ -55,6 +55,7 @@ header {
   font-size: 200px;
    font-family: 'Fascinate Inline',
    cursive;
+   text-shadow: 5px 5px #461A8B;;
 
 }
 
@@ -96,7 +97,7 @@ header {
 }
 
 .homeButton {
-  color: purple;
+ color: #461A8B;
 }
 
 .gm-style-iw {
