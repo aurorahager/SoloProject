@@ -30,9 +30,9 @@ myApp.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
       //   }//END getuser
       // }//END resolve
     })//END .when user
-    .when('/favs', {
-      templateUrl: '/views/templates/favs.html',
-      controller: 'FavsController as fc',
+    .when('/favorites', {
+      templateUrl: '/views/templates/faves.html',
+      controller: 'FavesController as fc',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();

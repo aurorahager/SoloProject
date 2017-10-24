@@ -47,7 +47,6 @@ myApp.controller('MapController', function (PlacesService, NgMap, $timeout, $sco
                 service.getDetails({
                 placeId: place.place_id
                 }, function(place, status) {
-                    console.log('place', place);
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
                         //   new marker for each place result
                         var marker = new google.maps.Marker({

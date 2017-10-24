@@ -1,58 +1,18 @@
 <div class="grad">
-  <!-- <header>
+  <header>
 
     <div ng-include="'/views/partials/header.html'"></div>
     <div ng-include="'/views/partials/nav.html'"></div>
 
   </header>
 </div>
-Javascript Sample page <br>
+Run Sample api searches
+<br>
+<br>
 
-<script type="text/javascript" src="http://api.eventful.com/js/api">
+<input type="button" ng-click="ec.show_alert()" value="Query #1 " />
+<br>
 
-</script>
-
-<script type="text/javascript">
-
-
-
-
-function show_alert2 () {
-
-   var oArgs = {
-
-      app_key: "mtf59wmLgBnDkmLw",
-
-      q: "music",
-
-      where: "San Diego", 
-
-      "date": "2013061000-2015062000",
-
-      page_size: 5,
-
-      sort_order: "popularity",
-
-   };
-
-   EVDB.API.call("/events/search", oArgs, function(oData) {
-
-      // Note: this relies on the custom toString() methods below
-
-    });
-
-}
-
-</script>
-
-
-
-
-<div class="container">
- 
-Run Sample api searches <br><br>
-
-<input type="button" ng-click="show_alert()" value="Query #1 " /> <br>
-
-<input type="button" onclick="show_alert2()" value="Query #2 " /> <br> -->
+<input type="button" ng-click="ec.show_alert2()" value="Query #2 " />
+<br>
 </div>

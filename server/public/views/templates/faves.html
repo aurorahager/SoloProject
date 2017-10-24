@@ -1,0 +1,21 @@
+<div class="grad">
+    <header>
+
+        <div ng-include="'/views/partials/header.html'"></div>
+        <div ng-include="'/views/partials/nav.html'"></div>
+
+    </header>
+</div>
+<div>
+
+    <h1 id="welcome" class="lead">Welcome, {{fc.userObject.userName}}!</h1>
+
+    <section ng-repeat="place in fc.faves">
+        <div> <h2>{{place.name}}</h2> <br> 
+        <img src="{{place.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 300})}}"> <br>
+            {{place.formatted_address}} <br> 
+            {{place.formatted_phone_number}} 
+            Rating: {{place.rating}} <br> <a href="{{place.website}}">{{place.website}}</a></div>
+    </section>
+   
+</div>
