@@ -2,6 +2,7 @@ myApp.service('PlacesService', function($http){
 
 var self = this;
 self.daFaves = [];
+self.daEvents = [];
 
 
 self.sendFave = function (placeId) {
@@ -58,4 +59,12 @@ self.deletePlace = function (placeId) {
     })//END  $http PUT
 }//END deletePlace
 
+self.getEvents = function () {
+    $http({
+        method: 'GET',
+        url: '/events',
+    }).then( function (resp){
+        self.daEvents.push(resp.data.search.events.event);
+    })//END $http GET
+}//END getEvents
 });//END service 

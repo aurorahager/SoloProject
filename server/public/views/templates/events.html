@@ -6,13 +6,22 @@
 
   </header>
 </div>
-Run Sample api searches
-<br>
-<br>
+<h1>This Week in Minneapolis</h1>
+<section ng-repeat="event in ec.events[0]">
+  <div>
+    <img src="{{event.image.url}}">
+    <h2>{{event.title}}</h2>
+     {{event.start_time}} {{event.stop_time}}<br>
+    description: {{event.description}} <br>
+    <strong>{{event.venue_name}}</strong>
+    {{ event.venue_address}}
+     {{ event.city_name}}
+     {{ event.region_name}}
+     {{ event.postal_code}} <br>
+     <a href="{{ event.venue_url}}">Venue Site</a>
+     <a href="{{event.url}}">Find Tickets</a>"
+     
 
-<input type="button" ng-click="ec.show_alert()" value="Query #1 " />
-<br>
+  </div>
 
-<input type="button" ng-click="ec.show_alert2()" value="Query #2 " />
-<br>
-</div>
+</section>
