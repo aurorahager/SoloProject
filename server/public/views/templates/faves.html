@@ -15,7 +15,10 @@
         <img src="{{place.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 300})}}"> <br>
             {{place.formatted_address}} <br> 
             {{place.formatted_phone_number}} 
-            Rating: {{place.rating}} <br> <a href="{{place.website}}">{{place.website}}</a></div>
+            Rating: {{place.rating}} <br> <a href="{{place.website}}">{{place.website}}</a>
+            <md-button ng-click="fc.deleteFave(place.place_id)")> Remove from list</md-button>
+            <hr>
+        </div>
     </section>
    
 </div>

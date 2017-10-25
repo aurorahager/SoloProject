@@ -8,6 +8,11 @@ myApp.controller('FavesController', function(UserService, PlacesService, $scope)
 
   console.log('faves in controller:', vm.faves);
   
+vm.deleteFave = function (faveId){
+  console.log('delete:', faveId);
+  PlacesService.deletePlace(faveId);
+  PlacesService.getFaves();
+}//END deleteFave
 
   $scope.currentNavItem = 'faves';
 });//END controller

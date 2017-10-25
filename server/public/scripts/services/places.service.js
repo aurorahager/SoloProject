@@ -45,4 +45,17 @@ self.getFaves = function () {
     })//END $http GET
 }//END getFaves
 
+self.deletePlace = function (placeId) {
+    console.log('place to delete from service:', placeId);
+    console.log('place id from service:', placeId);
+    var objToSend = { data: placeId };
+    $http({
+        method: 'PUT',
+        url: '/faves/delete',
+        data: objToSend
+    }).then(function (resp) {
+        console.log('response from put:', resp);
+    })//END  $http PUT
+}//END deletePlace
+
 });//END service 
