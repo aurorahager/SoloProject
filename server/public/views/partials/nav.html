@@ -2,7 +2,11 @@
   <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
     <md-nav-item name="places" md-nav-href="#/map">Places</md-nav-item>
     <md-nav-item name="events" md-nav-href="#/events">Events</md-nav-item>
-    <md-nav-item name="faves" md-nav-href="#/favorites">Favorites</md-nav-item>
-    <md-button md-no-ink class="md-primary" ng-click="uc.userService.logout()">Log Out</md-button>
+    <md-nav-item name="faves" md-nav-href="#/favorites">Saved Places</md-nav-item>
+    <span flex> </span>
+    <md-button md-no-ink class="logout" ng-click="uc.userService.logout()">
+      <ng-md-icon class="padDis" icon="logout" style="fill: white"></ng-md-icon>
+      <md-tooltip md-direction="left">Log Out</md-tooltip>
+    </md-button>
   </md-nav-bar>
 </md-content>

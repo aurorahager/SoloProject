@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMap', 'ngMaterial', 'ngMessages'])
+var myApp = angular.module('myApp', ['ngRoute', 'ngMap', 'ngMaterial', 'ngMessages', 'ngMdIcons'])
 
 /// Routes ///
 myApp.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
@@ -8,7 +8,7 @@ myApp.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
     .when('/home', {
       templateUrl: '/views/templates/home.html',
       // controller: 'HomeController as hc',
-    })//END  .when home
+    }) //END  .when home
     .when('/map', {
       templateUrl: '/views/templates/map.html',
       controller: 'MapController as mc'
@@ -16,11 +16,11 @@ myApp.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
     .when('/login', {
       templateUrl: '/views/templates/login.html',
       controller: 'LoginController as lc',
-    })//END  .when home
+    }) //END  .when home
     .when('/register', {
       templateUrl: '/views/templates/register.html',
       controller: 'LoginController as lc'
-    })//END .when register
+    }) //END .when register
     .when('/events', {
       templateUrl: '/views/templates/events.html',
       controller: 'EventsController as ec'
@@ -29,19 +29,19 @@ myApp.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
       //     return UserService.getuser();
       //   }//END getuser
       // }//END resolve
-    })//END .when user
+    }) //END .when user
     .when('/favorites', {
       templateUrl: '/views/templates/faves.html',
       controller: 'FavesController as fc',
       resolve: {
-        getuser : function(UserService){
+        getuser: function (UserService) {
           return UserService.getuser();
-        }//END getuser
-      }//END resolve
-    })//END .when info
+        } //END getuser
+      } //END resolve
+    }) //END .when info
     .otherwise({
       redirectTo: 'home'
-    });//ENd otherwise
+    }); //ENd otherwise
 
-  $mdThemingProvider.theme('default').primaryPalette('blue').accentPalette('purple').dark();;
-});//END config
+  $mdThemingProvider.theme('default').primaryPalette('pink').accentPalette('purple').dark();;
+}); //END config

@@ -5,104 +5,222 @@
   hr {
     background-color: rgb(173, 20, 20);
   }
-  html, body {
-    background-color: black;
+
+  ._md-nav-bar-list,
+  .md-padding,
+  md-content {
+    background: rgb(3, 0, 27);
   }
 
-._md-nav-bar-list, .md-padding {
-  background: black;
+  html,
+  body,
+  .colorBody {
+    background-color: rgb(22, 20, 43);
+  }
 
+  .colorBody {
+    margin: 10px;
+  }
 
-}
+  .md-padding {
+    padding: 2px;
+  }
 
-.md-padding {
-  padding: 2px;
-}
-  .grad{
-background: linear-gradient(rgb(4, 4, 82), rgb(110, 23, 110), rgb(240, 112, 112), rgb(240, 201, 134), rgb(246, 225, 132));
+  .grad {
+    background: linear-gradient(rgb(4, 4, 82), rgb(110, 23, 110), rgb(240, 112, 112), rgb(240, 201, 134), rgb(246, 225, 132));
+  }
 
-}
+  header {
+    height: 300px;
+    background-image: url('/imgs/mplsSky.png');
+    background-size: contain;
+    background-size: cover;
+    color: white;
+  }
 
-header {
-  
-  height: 300px;
-  background-image: url('/imgs/mplsSky.png');
-  background-size: contain;
-  background-size: cover; 
-  color: white;
-}
- .title {
-   opacity: .90;
-   text-align: center;
-   font-size: 100px;
-   padding-top: 0px;
-   margin-bottom: 120px;
-   text-shadow: 2px 2px #2b0be2;
-   font-family: 'Fascinate Inline',
-   cursive;
-   /* padding-bottom: 0px; */
- }
- h1 {
-   font-size: 40px;
-   text-align: center;
-   color: white;
- }
+  .title {
+    opacity: .90;
+    text-align: center;
+    font-size: 100px;
+    padding-top: 0px;
+    margin-bottom: 120px;
+    text-shadow: 2px 2px #2b0be2;
+    font-family: 'Fascinate Inline', cursive;
+  }
 
-.search {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  color: white;
-}
+  h1 {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+  }
 
-.homeHeader {
-  font-size: 200px;
-   font-family: 'Fascinate Inline',
-   cursive;
-   text-shadow: 5px 5px #461A8B;;
+  .search {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: white;
+  }
 
-}
+  .homeHeader {
+    font-size: 200px;
+    font-family: 'Fascinate Inline', cursive;
+    text-shadow: 5px 5px #461A8B;
+    ;
+  }
 
-.black {
-  color: black;
-}
+  .black {
+    color: black;
+  }
 
-.homeBody {
-  position: absolute;
-  top: 0; 
-  left: 0;
-  height: 100%;
-  width:100%;
-}
-.openingPageLeft {
-  height: 100%;
-  width:50%;
-  float: left;
-  color: black;
-  background-color: white;
-  
-}
+  .homeBody {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
 
-.openingPageRight {
-  background-image: url('/imgs/owl.jpg');
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 100%;
-  height: 100%;
-  width:50%;
-  float: right;
-}
+  .openingPageLeft {
+    height: 100%;
+    width: 50%;
+    float: left;
+    color: black;
+    background-color: white;
+  }
 
-.owl {
-  position: absolute;
-  bottom: 0;
-  left: 5;
-  padding-left: 100px;
-}
+  .openingPageRight {
+    background-image: url('/imgs/owl.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100%;
+    height: 100%;
+    width: 50%;
+    float: right;
+  }
 
-.homeButton {
- color: #461A8B;
-}
+  .owl {
+    position: absolute;
+    bottom: 0;
+    left: 5;
+    padding-left: 100px;
+  }
 
-.gm-style-iw {
-  color: black;
-}
+  .homeButton {
+    color: #461A8B;
+  }
+
+  .gm-style-iw {
+    color: black;
+  }
+
+  md-progress-circular {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 100px;
+  }
+
+  ng-map {
+    height: 400px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(248, 37, 76)
+  }
+
+  .floatLeft {
+    float: left;
+  }
+
+  #iw-container .iw-title {
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    margin: 1px;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .iw-title {
+    background: linear-gradient(to right, #6389fa, #8aa5fd, white);
+  }
+
+  .infoImg {
+    float: right;
+    height: 70px;
+    width: 70px;
+  }
+
+  .btt-btn {
+    cursor: pointer;
+    position: fixed;
+    bottom: .5em;
+    right: .5em;
+    padding: .5em;
+    text-decoration: none;
+    font-size: 14px;
+    outline-style: none;
+  }
+
+  #backTT {
+    z-index: -9999999;
+    position: absolute;
+    top: 0;
+  }
+
+  md-card {
+    margin-right: 200px;
+    margin-left: 200px;
+    background-color: rgb(47, 45, 87);
+  }
+
+  md-card:hover {
+    background-color: rgb(36, 34, 85);
+  }
+
+  .imageToSize {
+    height: 100px;
+  }
+
+  .headingMarg {
+    margin: 50px;
+  }
+
+  .lessMarg {
+    margin: 20px;
+  }
+
+  .lessMarg2 {
+    margin: 10px;
+  }
+
+  .logout {
+    padding: 1px;
+  }
+
+  .padDis {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  .middle {
+    vertical-align: middle;
+    text-align: center;
+    margin: 150px;
+  }
+
+  .log {
+    margin: 20px;
+  }
+
+  .lefty {
+    display: inline;
+  }
+
+  .righty {
+    float: right;
+    min-width: 1%;
+    min-height: 1%;
+  }

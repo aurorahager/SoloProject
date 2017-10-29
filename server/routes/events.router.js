@@ -4,20 +4,32 @@ var router = express.Router();
 var passport = require('passport');
 var Users = require('../models/user.js');
 var path = require('path');
+// Eventful API requires
 var eventful = require('eventful-node');
 var client = new eventful.Client('mtf59wmLgBnDkmLw');
 
 
-router.get('/', function (req, res){
+// router GET function to retrieve events from API
+router.get('/', function (req, res) {
+    // search events
     client.searchEvents({
-        location: 'minneapolis', keyword: 'concert', date: 'this week', page_size: 100, sort_order: 'popularity'}, function (err, data) {
+        location: 'minneapolis',
+        // keyword: 'concert',
+        date: 'this week',
+        page_size: 75,
+        sort_order: 'popularity'
+    }, function (err, data) {
+        //error handling
         if (err) {
             console.error(err);
             res.sendStatus(500);
-        }
-        console.log('Recieved ' + data.search.total_items + ' events');
+        } //END if error
+        console.log('Received' + data.search.total_items + 'events');
+        // send events to service
         res.send(data);
-    });
-})//END router GET
+    }); //END searchEvents
+}) //END router GET
 
+
+//EXPORT
 module.exports = router;

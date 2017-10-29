@@ -1,27 +1,44 @@
 <div class="grad">
+  <!-- header and navbar -->
   <header>
-
     <div ng-include="'/views/partials/header.html'"></div>
     <div ng-include="'/views/partials/nav.html'"></div>
-
   </header>
 </div>
-<h1>This Week in Minneapolis</h1>
-<section ng-repeat="event in ec.events[0]">
-  <div>
-    <img src="{{event.image.url}}">
-    <h2>{{event.title}}</h2>
-     {{event.start_time}} {{event.stop_time}}<br>
-    description: {{event.description}} <br>
-    <strong>{{event.venue_name}}</strong>
-    {{ event.venue_address}}
-     {{ event.city_name}}
-     {{ event.region_name}}
-     {{ event.postal_code}} <br>
-     <a href="{{ event.venue_url}}">Venue Site</a>
-     <a href="{{event.url}}">Find Tickets</a>"
-     
-
+<main>
+  <!-- span to scoll to for to top button -->
+  <span id="backTT"></span>
+  <!-- spinner as content loads -->
+  <md-progress-circular ng-hide="ec.activated()" class="md-accent md-hue-1" md-diameter="200"></md-progress-circular>
+  <!-- show title on content load -->
+  <h1 class="headingMarg" ng-show="ec.activated()">This Week in Minneapolis</h1>
+  <!-- event cards -->
+  <md-card ng-repeat="event in ec.events[0]" class="eventsDiv">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{event.title}}</span>
+        <span class="md-subhead">
+          {{event.start_time}} {{event.stop_time}}
+          <br>
+          <!-- description: {{event.description}} <br> -->
+          <strong>{{event.venue_name}}</strong>
+          {{ event.venue_address}} {{ event.city_name}} {{ event.region_name}} {{ event.postal_code}}
+          <br>
+        </span>
+      </md-card-title-text>
+      <md-card-title-media>
+        <img class="md-media-lg card-media" src="{{event.image.medium.url}}">
+        </div>
+      </md-card-title-media>
+    </md-card-title>
+    <md-card-actions layout="row">
+      <md-button class="md-accent md-raised" href="{{ event.venue_url}}" target="_blank">Venue Site</md-button>
+      <md-button class="md-accent md-raised" href="{{event.url}}" target="_blank">Go to Event</md-button>
+    </md-card-actions>
+  </md-card>
+  <!-- scroll to top of page button -->
+  <md-button ng-click="gotoTop()" ng-hide="!ec.activated()" class="btt-btn md-fab" id="scrollBtn">
+    <md-tooltip md-direction="top">Back to top</md-tooltip>
+    <i class="material-icons">&#xE316;</i>
+  </md-button>
   </div>
-
-</section>

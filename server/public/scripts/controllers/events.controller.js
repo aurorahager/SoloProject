@@ -1,11 +1,50 @@
-myApp.controller('EventsController', function( PlacesService, $scope) {
+myApp.controller('EventsController', function (PlacesService, $scope, $location, $anchorScroll) {
   console.log('EventsController created');
   var vm = this;
-  vm.events = PlacesService.daEvents;
+  vm.events = [];
+  // for navbar
+  $scope.currentNavItem = 'events';
 
-  // // api key mtf59wmLgBnDkmLw
+  // function to hide spinner and show title when content loads
+  vm.activated = function () {
+    if (vm.events.length > 0) {
+      return true;
+    } //END if 
+  } //END activated
 
+  // function to call scrollFunction on scroll
+  window.onscroll = function () {
+    scrollFunction()
+  };//END onscroll
+
+  // function to only show scroll to top button after page as been scrolled down
+  function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      document.getElementById("scrollBtn").style.display = "block";
+    } else {
+      document.getElementById("scrollBtn").style.display = "none";
+    }//END else
+  }//END scrollFunction
+
+  // function for button to scroll to top
+  $scope.gotoTop = function () {
+    // set the location.hash to the id of
+    // the element you wish to scroll to.
+    $location.hash('backTT');
+    // call $anchorScroll()
+    $anchorScroll();
+  }; //END gotoTop
+
+
+  //function to getEvents from places service
+  function getEvents () {
     PlacesService.getEvents();
-    console.log('Events in controller:', vm.events);
-    
-});//END controller
+    vm.events = PlacesService.daEvents;    
+  }//END get events
+
+  //CALL getEvents
+  getEvents();
+
+  console.log('Events in controller:', vm.events);
+
+}); //END controller
