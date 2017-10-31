@@ -4,7 +4,6 @@ This base project includes registration and authentication using passport.
 
 ## Instructions
 
-**Do not fork this repository.** Forking this repository would make it _private_ and you'll want the repository for your solo project _public_.
 
 1. Read all steps before starting
 2. Select the desired branch (mongo or sql) from the dropdown above
