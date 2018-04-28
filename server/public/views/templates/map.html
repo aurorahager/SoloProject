@@ -1,0 +1,174 @@
+<section>
+    <div class="grad">
+        <header>
+
+            <div ng-include="'/views/partials/header.html'"></div>
+            <div ng-include="'/views/partials/nav.html'"></div>
+
+        </header>
+    </div>
+
+    <div class="main">
+        <md-input-container class="search">
+            <label>Please Select a Category</label>
+            <md-select ng-model="mc.types">
+                <md-optgroup label="Categories">
+                    <md-option value="restaurant">Restaurants</md-option>
+                    <md-option value="meal_delivery">Delivery</md-option>
+                    <md-option value="store">Stores</md-option>
+                    <md-option value="bar">Bars</md-option>
+                    <md-option value="night_club">Clubs</md-option>
+                    <md-option value="liquor_store">Liqour Stores</md-option>
+                    <md-option value="park">Parks</md-option>
+                    <md-option value="casino">Casinos</md-option>
+                    <md-option value="movie_theater">Movie Theaters</md-option>
+                    <md-option value="gas_station">Gas Stations</md-option>
+                    <md-option value="museum">Museums</md-option>
+                    <md-option value="cafe">Cafes</md-option>
+                    <md-option value="all">All</md-option>
+                </md-optgroup>
+            </md-select>
+        </md-input-container>
+        <md-button class="search" ng-click="mc.searchPlaces()">Search</md-button>
+        <ng-map id="map" class='map_canvas' center="[44.97, -93.26]" zoom="13" default-style="false" styles='
+[{"featureType": "all","elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "saturation": 36
+            },
+            {
+                "color": "#593577"
+            },
+            {
+                "lightness": 40
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#010118"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": 20
+            },
+            {
+                "color": "#060606"
+            }
+        ]
+    },{
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": 21
+            },
+            {
+                "color": "#000000"
+            }
+        ]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#240a24"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#e6bf62"
+            },
+            {
+                "lightness": 29
+            },
+            {
+                "weight": 0.2
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#0a070a"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#2e2941"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {"featureType": "transit", "elementType": "geometry","stylers": [
+            {"color": "#000000"},{"lightness": 19}]},{"featureType": "water","elementType": "geometry","stylers":[{"color": "#030207"},{"lightness": 17}]}]'>
+        </ng-map>
+    </div>
+</section>

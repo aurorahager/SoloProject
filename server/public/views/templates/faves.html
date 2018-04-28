@@ -1,0 +1,27 @@
+<div class="grad">
+    <header>
+
+        <div ng-include="'/views/partials/header.html'"></div>
+        <div ng-include="'/views/partials/nav.html'"></div>
+
+    </header>
+</div>
+<!-- <h1 id="welcome" class="lead headingMarg">Welcome, {{fc.userObject.userName}}!</h1> -->
+<md-content class="md-padding colorBody" layout-xs="column" layout="row">
+    <md-card  class ="lessMarg" ng-repeat="place in fc.faves">
+        <md-card-title>
+        <md-card-title-text>
+        <span class="md-headline lessMarg2">{{place.name}}</span>
+        <span class="md-subhead lessMarg2">{{place.formatted_address}}<br>
+        {{place.formatted_phone_number}}<br> Rating: {{place.rating}}</span>
+        </md-card-title-text>
+    <md-card-title-media>
+        <img class="md-media-lg card-media lessMarg2" src="{{place.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})}}">
+    </md-card-title-media>
+    </md-card-title>
+<md-card-actions layout="row">
+            <md-button href="{{place.website}}" target="_blank">Visit Site</md-button>
+            <md-button ng-click="fc.deleteFave(place.place_id)")> Remove from list</md-button>
+</md-card-actions>
+</md-card>
+</md-content>
