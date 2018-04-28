@@ -4,17 +4,11 @@ myApp.controller('FavesController', function (UserService, PlacesService, $scope
   var vm = this;
   vm.userService = UserService;
   vm.userObject = UserService.userObject;
-  vm.faves = [];
+  vm.faves = PlacesService.daFaves;
 
-  function getFaves() {
-   vm.faves = PlacesService.daFaves;
-    PlacesService.getFaves();
-  }
-  getFaves();
+  PlacesService.getFaves();
   console.log('faves in controller:', vm.faves);
-
   vm.deleteFave = function (faveId) {
-
     swal({
         title: "Are you sure?",
         text: "Remove place from saved list?",
@@ -30,12 +24,16 @@ myApp.controller('FavesController', function (UserService, PlacesService, $scope
           });
           console.log('delete:', faveId);
           PlacesService.deletePlace(faveId);
-          getFaves();
+          PlacesService.getFaves();
         } else {
           swal("Your saved place is safe!");
         }
       })
   } //END deleteFave
+
+  $scope.logout = function () {
+    UserService.logout();
+  } //END logout
 
   $scope.currentNavItem = 'faves';
 }); //END controller

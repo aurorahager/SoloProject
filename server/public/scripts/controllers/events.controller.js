@@ -1,4 +1,4 @@
-myApp.controller('EventsController', function (PlacesService, $scope, $location, $anchorScroll) {
+myApp.controller('EventsController', function (PlacesService, UserService, $scope, $location, $anchorScroll) {
   console.log('EventsController created');
   var vm = this;
   vm.events = [];
@@ -44,6 +44,10 @@ myApp.controller('EventsController', function (PlacesService, $scope, $location,
 
   //CALL getEvents
   getEvents();
+
+  $scope.logout = function () {
+    UserService.logout();
+  }//END logout
 
   console.log('Events in controller:', vm.events);
 

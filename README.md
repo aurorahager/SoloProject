@@ -1,10 +1,12 @@
-# Name of Project
+# Night Owl
 
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+Full stack wed app using the MEAN stack that allows users to find and save places to go that are open and things to do in Minneapolis.
 
 ## Built With
 
-List technologies and frameworks here
+Javascript, AngularJS, Express.js, Node.js, Passport.js, MongoDB,
+Mongoose, Angular Material, Google Maps API, Google Places Library, Eventful API
+
 
 ## Getting Started
 
@@ -49,9 +51,9 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* Name of author(s)
+* Rory Hager
 
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
+* Prime Digital Academy for the Passport.js base code

@@ -5,7 +5,6 @@ myApp.service('PlacesService', function ($http) {
     self.daFaves = [];
     self.daEvents = [];
 
-
     // function to send saved/faves to server -> DB
     self.sendFave = function (placeId) {
         console.log('place id from service:', placeId);
@@ -25,16 +24,17 @@ myApp.service('PlacesService', function ($http) {
 
     // function to get saved places id from server <- DB | and get details from google API
     self.getFaves = function () {
+        // set google API variables
+        var map = new google.maps.Map(document.createElement('div'));
+        var service = new google.maps.places.PlacesService(map);
         // GET request
         $http({
             method: 'GET',
             url: '/faves'
         }).then(function (resp) {
+            console.log('resposne from feaves in service:', resp.data[0].faveplaces);
             // set var to places array from response
-            var places = resp.data.places
-            // set google API variables
-            var map = new google.maps.Map(document.createElement('div'));
-            var service = new google.maps.places.PlacesService(map);
+            var places = resp.data[0].faveplaces
             // temporary array push places into
             var tempArray = [];
             // loop through places array

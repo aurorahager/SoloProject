@@ -18,7 +18,7 @@
       <md-card-title-text>
         <span class="md-headline">{{event.title}}</span>
         <span class="md-subhead">
-          {{event.start_time}} {{event.stop_time}}
+          {{event.start_time | date : "fullDate" }} {{event.stop_time | date : "fullDate" }}
           <br>
           <!-- description: {{event.description}} <br> -->
           <strong>{{event.venue_name}}</strong>

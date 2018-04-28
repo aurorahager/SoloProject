@@ -2,7 +2,6 @@ myApp.controller('MapController', function (UserService, PlacesService, NgMap, $
     vm = this;
     vm.userService = UserService;
     vm.userObject = UserService.userObject;
-    console.log('user!!!!->', vm.userObject);
 
     // var to hold location of mpls
     var mpls = {
@@ -43,7 +42,6 @@ myApp.controller('MapController', function (UserService, PlacesService, NgMap, $
                         // call createMarker on each result
                         createMarker(results[i]);
                         console.log('results!!!', results);
-
                     } //END for loop
                 } //END if OK
                 console.log('results', results.place_id);
@@ -62,22 +60,22 @@ myApp.controller('MapController', function (UserService, PlacesService, NgMap, $
                             icon: 'imgs/cropcirclesIcon.png', //custom marker icon
                             position: place.geometry.location,
                         }); //END marker
-                        // click listener on pins 
+                        // click listener on pins
                         google.maps.event.addListener(marker, 'click', function () {
                             // create infowindow content | name, address, rating, phone number, website
-                            //button on click taking place id paramater 
+                            //button on click taking place id paramater
                             var content = '<div id="iw-container"><div class="iw-title">' + place.name + '</div>' +
                                 place.formatted_address + '<br>' + 'Rating: ' + place.rating +
                                 '<br> ' + place.formatted_phone_number + '  <br>' + '<md-button class="lefty" href="' +
-                                place.website + '">Visit Site</md-button> <md-button class="padDis righty" ng-click="mc.saveFave( \'' +
-                                place.place_id + '\')">  <ng-md-icon icon="favorite" style="fill: #ff3467" size="30" class="padDis"></ng-md-icon><md-tooltip md-direction="top">Save</md-tooltip></md-button></div>';
+                                place.website + '">Visit Site</md-button> <md-button class="padDis righty" ng-hide="mc.faved" ng-click="mc.saveFave( \'' +
+                                place.place_id + '\')">  <ng-md-icon icon="favorite_border" style="fill: #ff3467" size="30" class="padDis"></ng-md-icon><md-tooltip md-direction="top">Save</md-tooltip></md-button><md-button class="padDis righty" ng-show="mc.faved">  <ng-md-icon icon="favorite" style="fill: #ff3467" size="30" class="padDis"></ng-md-icon></md-button></div>';
                             //  compile content
                             var compiledContent = $compile(content)($scope);
                             //  set infowindow content to compiled content
                             infowindow.setContent(compiledContent[0]);
                             // open infowindow on click
                             infowindow.open(map, this);
-                        }); //END listener/ infowindoe
+                        }); //END listener/ infowindow
                     } //END if
                 }); //END getDetails
             } //END createMarker
@@ -89,5 +87,10 @@ myApp.controller('MapController', function (UserService, PlacesService, NgMap, $
         console.log('place ID:', placeId);
         PlacesService.sendFave(placeId);
         swal("Saved!", "Your place has been saved!", "success");
+        vm.faved = true;
     }
+
+    $scope.logout = function () {
+        UserService.logout();
+    } //END logout
 }); //END controller
